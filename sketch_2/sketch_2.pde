@@ -22,7 +22,7 @@ int cantidadEstrellas = 100;
 // Edificios y ventanas
 int cantidadEdificios = 5;
 int[] alturaDeEdificios = new int[cantidadEdificios];
-int filasVentanas = 7;
+int filasVentanas = 6;
 int columnasVentanas = 3;
 int anchoVentana = 6;
 int altoVentana = 6;
@@ -66,7 +66,7 @@ void draw() {
   background(10, 10, 40);
   analizadorFrecuencia.analyze(espectro);
 
-  // --- Estrellas que vibran con la frecuencia ---
+  // Estrellas que vibran con la frecuencia 
   for (int i = 0; i < cantidadEstrellas; i++) {
     float tam = map(espectro[i % espectro.length], 0, 0.05, 1, 5);
     fill(255, 230, 150);
@@ -74,11 +74,11 @@ void draw() {
     ellipse(estrellasX[i], estrellasY[i], tam, tam);
   }
 
-  // --- Dibujo de la calle ---
+  // Dibujo de la calle 
   fill(30);
   rect(0, height - 80, width, 80);
 
-  // --- Dibujo de edificios y sus ventanas ---
+  // Dibujo de edificios y sus ventanas 
   for (int i = 0; i < cantidadEdificios; i++) {
     int posXEdificio = 100 + i * 150;
     int altura = alturaDeEdificios[i];
